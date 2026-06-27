@@ -1,0 +1,255 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>TaskFlow - Task Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700&amp;family=Geist:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"on-background": "#dee4dc", "outline-variant": "#3c4a42", "secondary-fixed": "#a6f2d1", error: "#ffb4ab", "error-container": "#93000a", surface: "#0f1510", "on-secondary-fixed-variant": "#00513b", "inverse-on-surface": "#2c322c", "primary-container": "#10b981", "on-tertiary-fixed": "#002114", primary: "#4edea3", outline: "#86948a", "on-secondary-container": "#87d2b2", "primary-fixed": "#6ffbbe", "on-surface": "#dee4dc", "surface-variant": "#303630", "on-primary-fixed-variant": "#005236", "secondary-fixed-dim": "#8bd6b6", "on-secondary": "#003828", "on-primary-fixed": "#002113", "on-surface-variant": "#bbcabf", "surface-container-high": "#252c26", "tertiary-fixed": "#68fcbf", "surface-container-lowest": "#0a100b", "inverse-surface": "#dee4dc", "on-tertiary-fixed-variant": "#005137", "surface-container-low": "#171d18", "on-tertiary": "#003825", "surface-container": "#1b211c", "inverse-primary": "#006c49", "secondary-container": "#005c43", secondary: "#8bd6b6", "surface-bright": "#343b35", "surface-tint": "#4edea3", "surface-dim": "#0f1510", "on-tertiary-container": "#00422c", "primary-fixed-dim": "#4edea3", background: "#0f1510", "surface-container-highest": "#303630", "on-primary-container": "#00422b", "on-error-container": "#ffdad6", tertiary: "#45dfa4", "tertiary-container": "#00b982", "on-error": "#690005", "on-secondary-fixed": "#002116", "tertiary-fixed-dim": "#45dfa4", "on-primary": "#003824"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {"margin-desktop": "64px", gutter: "24px", "margin-mobile": "20px", "container-max": "1440px", unit: "4px"}, fontFamily: {"headline-xl": ["Hanken Grotesk"], "headline-lg": ["Hanken Grotesk"], "label-md": ["Geist"], "code-sm": ["Geist"], "headline-lg-mobile": ["Hanken Grotesk"], "body-lg": ["Geist"], "body-md": ["Geist"], headline: ["Hanken Grotesk"], display: ["Hanken Grotesk"], body: ["Geist"], label: ["Geist"]}, fontSize: {"headline-xl": ["48px", {lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700"}], "headline-lg": ["32px", {lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600"}], "label-md": ["14px", {lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500"}], "code-sm": ["13px", {lineHeight: "18px", fontWeight: "400"}], "headline-lg-mobile": ["24px", {lineHeight: "32px", fontWeight: "600"}], "body-lg": ["18px", {lineHeight: "28px", fontWeight: "400"}], "body-md": ["16px", {lineHeight: "24px", fontWeight: "400"}]}}}};</script>
+<style>
+        .glass-panel {
+            background-color: rgba(23, 29, 24, 0.85); /* surface-container-low approx */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid #142617; /* outline-variant approx */
+        }
+        .emerald-glow {
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.15); /* primary-container approx */
+        }
+        .ghost-border {
+            border: 1px solid rgba(78, 222, 163, 0.2); /* primary approx */
+        }
+        /* Custom scrollbar for dark theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f1510;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #303630;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3c4a42;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen relative flex items-center justify-center p-gutter">
+<!-- Modal Backdrop -->
+<div aria-hidden="true" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"></div>
+<!-- Modal Container -->
+<div aria-labelledby="task-title" aria-modal="true" class="glass-panel w-full max-w-5xl rounded-xl z-50 flex flex-col max-h-[921px] overflow-hidden shadow-2xl emerald-glow" role="dialog">
+<!-- Modal Header -->
+<header class="flex justify-between items-start p-6 border-b border-outline-variant bg-surface-container/50">
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-3">
+<span class="px-2.5 py-1 rounded-full bg-primary-container/10 border border-primary/20 text-primary font-label-md text-label-md flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                        In Progress
+                    </span>
+<span class="text-on-surface-variant font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">folder</span>
+                        Frontend / Core
+                    </span>
+<span class="text-on-surface-variant font-label-md text-label-md">TASK-4092</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mt-1" id="task-title">Implement Interactive Shader</h1>
+</div>
+<div class="flex items-center gap-2">
+<button aria-label="More actions" class="p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-variant transition-colors ghost-border">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+<button aria-label="Close modal" class="p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-variant transition-colors ghost-border">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</header>
+<!-- Modal Body (Scrollable) -->
+<div class="flex-1 overflow-y-auto flex flex-col lg:flex-row">
+<!-- Main Content Area -->
+<main class="flex-1 p-6 lg:p-8 flex flex-col gap-8 lg:border-r border-outline-variant">
+<!-- Description Section -->
+<section>
+<h2 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">description</span>
+                        Description
+                    </h2>
+<div class="text-on-surface space-y-4 font-body-md text-body-md leading-relaxed">
+<p class="">We need to integrate a high-performance WebGL shader for the new hero section. The shader should respond to cursor movement and provide a subtle "emerald mist" effect over a dark void background to match our current design language.</p>
+<p class="">Key requirements:</p>
+<ul class="list-disc pl-5 space-y-1 text-on-surface-variant">
+<li class="">Must maintain 60fps on average hardware.</li>
+<li class="">Use our primary color palette (Primary: #4edea3, Void: #0f1510).</li>
+<li class="">Include fallback for older browsers or reduced motion preferences.</li>
+</ul>
+<!-- Code Block -->
+<div class="mt-4 rounded-lg overflow-hidden border border-outline-variant bg-[#0e1a10]">
+<div class="flex items-center justify-between px-4 py-2 bg-surface-container border-b border-outline-variant">
+<span class="font-code-sm text-code-sm text-on-surface-variant">shader.glsl</span>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+</div>
+<pre class="p-4 overflow-x-auto text-on-surface font-code-sm text-code-sm leading-relaxed"><code><span class="text-secondary">void</span> <span class="text-primary-fixed">main</span>() {
+    <span class="text-secondary">vec2</span> uv = gl_FragCoord.<span class="text-tertiary">xy</span> / u_resolution.<span class="text-tertiary">xy</span>;
+    <span class="text-secondary">vec3</span> color = <span class="text-primary-fixed">vec3</span>(<span class="text-tertiary">0.06</span>, <span class="text-tertiary">0.72</span>, <span class="text-tertiary">0.50</span>); <span class="text-outline-variant">// Primary Emerald</span>
+    <span class="text-secondary">float</span> dist = <span class="text-primary-fixed">distance</span>(uv, u_mouse);
+    
+    <span class="text-secondary">float</span> intensity = <span class="text-primary-fixed">smoothstep</span>(<span class="text-tertiary">0.5</span>, <span class="text-tertiary">0.0</span>, dist);
+    gl_FragColor = <span class="text-primary-fixed">vec4</span>(color * intensity, <span class="text-tertiary">1.0</span>);
+}</code></pre>
+</div>
+</div>
+</section>
+<hr class="border-outline-variant">
+<!-- Attachments Section -->
+<section>
+<h2 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">attachment</span>
+                        Attachments
+                    </h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="flex items-center gap-3 p-3 rounded-lg border border-outline-variant bg-surface-container-low hover:bg-surface-variant transition-colors cursor-pointer group">
+<div class="w-10 h-10 rounded bg-[#0e1a10] flex items-center justify-center text-primary border border-primary/20">
+<span class="material-symbols-outlined">image</span>
+</div>
+<div class="flex-1 overflow-hidden">
+<p class="font-label-md text-label-md text-on-surface truncate group-hover:text-primary transition-colors">hero-mockup-v2.png</p>
+<p class="font-code-sm text-code-sm text-on-surface-variant">2.4 MB</p>
+</div>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-lg border border-outline-variant bg-surface-container-low hover:bg-surface-variant transition-colors cursor-pointer group">
+<div class="w-10 h-10 rounded bg-[#0e1a10] flex items-center justify-center text-secondary border border-secondary/20">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div class="flex-1 overflow-hidden">
+<p class="font-label-md text-label-md text-on-surface truncate group-hover:text-primary transition-colors">shader_specs.pdf</p>
+<p class="font-code-sm text-code-sm text-on-surface-variant">845 KB</p>
+</div>
+</div>
+</div>
+</section>
+<hr class="border-outline-variant">
+<!-- Activity Section -->
+<section>
+<h2 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">history</span>
+                        Activity
+                    </h2>
+<!-- Comment Input -->
+<div class="flex gap-4 mb-6">
+<div class="w-10 h-10 rounded-lg overflow-hidden border border-outline-variant bg-black flex items-center justify-center"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCL6bm2k8BFkK0jnnChmb7Zb4B8qsV7uVsxxq0SB9ouau42Nd0vXt0dSWn4kdDvuQkhmL8EMGCskJw3z-zxU1UpuKCrm-mv-nJ4kjgW06wgo4Rl7dDfm9J-aRNZ9-UpbdDwzfIPocC8ogiIlsi7wiLza0LLy3YsZMOytwK9825V3obGXBP6-5tiMOeBCZD940pXTdlS2e2wEmWdLqivQrPBEy8ew1m3PmVYFOG_xrSJvGFBpnL0TZzJf1vxvxywWjjTUXLUCSOgXZlr" alt="TaskFlow Logo" class="w-full h-full object-cover"></div>
+<div class="flex-1 relative">
+<textarea class="w-full bg-[#0e1a10] border border-outline-variant rounded-lg p-3 text-on-surface font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-none h-24 placeholder-on-surface-variant/50" placeholder="Add a comment..."></textarea>
+<div class="absolute bottom-2 right-2 flex gap-2">
+<button class="p-1.5 text-on-surface-variant hover:text-primary transition-colors rounded">
+<span class="material-symbols-outlined text-[20px]">format_bold</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-primary transition-colors rounded">
+<span class="material-symbols-outlined text-[20px]">code</span>
+</button>
+<button class="px-3 py-1.5 bg-primary-container text-black font-label-md text-label-md rounded hover:bg-primary transition-colors">Comment</button>
+</div>
+</div>
+</div>
+<!-- Activity Feed -->
+<div class="space-y-6 relative before:absolute before:inset-y-0 before:left-5 before:w-px before:bg-outline-variant">
+<!-- Event -->
+<div class="flex gap-4 relative z-10">
+<div class="w-10 h-10 rounded-full bg-surface-variant border border-outline-variant flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">commit</span>
+</div>
+<div class="flex-1 pt-2">
+<p class="font-body-md text-body-md text-on-surface">
+<span class="font-label-md text-label-md font-bold">Alex Chen</span> linked a commit <a class="text-primary hover:underline font-code-sm" href="#">a7f9b2c</a>
+</p>
+<p class="font-code-sm text-code-sm text-on-surface-variant mt-1">2 hours ago</p>
+</div>
+</div>
+<!-- Comment -->
+<div class="flex gap-4 relative z-10">
+<img alt="Sarah Jenkins" class="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="A small, circular avatar portrait of a developer. They have short dark hair and are wearing glasses, illuminated by the glow of a monitor in a dark room. Deep green aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCD8Cm_fk0D9oH85Z_kahkGkM73Oe2h87_LaLIVZEZhAzIerx79NutPCVpoWG41XLl1LcrsD_ANS1PGWGarSDtxQeS2wq1uk0cFWDz87RHBX5ISFEl14STlaG1pju8LgPXBI1TJI-TDKW6JVcFPZX_SDrA14_IYNK8dS7rfdq3Ou8sEuI-bnc8cu7n4v5uFRebmiiRdC9HBnDixF4ReA8lWv4O-P3_6assesmluBpgl6yb9bxzc0avfHQL8fCadh9QG1T335JZ5wNCL">
+<div class="flex-1">
+<div class="bg-surface-container rounded-lg border border-outline-variant p-4">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-label-md text-on-surface font-bold">Sarah Jenkins</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Yesterday at 4:30 PM</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">I've attached the latest mockup. The green mist effect should be slightly more transparent in the center to let the typography stand out. Let me know if you need the raw assets.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Sidebar (Metadata) -->
+<aside class="w-full lg:w-80 p-6 lg:p-8 bg-surface-container-lowest/50 flex flex-col gap-8">
+<!-- Assignees -->
+<div>
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-3">Assignees</h3>
+<div class="flex items-center gap-3 p-2 rounded-lg hover:bg-surface-variant transition-colors cursor-pointer group">
+<img alt="Alex Chen" class="w-8 h-8 rounded-full object-cover border border-outline-variant" data-alt="Avatar portrait of a lead developer. Dark environment, sharp features, illuminated by a cool, slightly green technical light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmAiSBTd4qcinA6ayLEG4BtmyFPioOvge8jgxCorK_yEN8SyLmcgYvM6YHlhb9sPqVHwdQlmUP_VLSQjqmWwy4XBVVE_h6JM-cGpASsiJJ75sdyWyKVN5FjdRM5qvnMfC-v_Yvj94UI1fWnO8ur46YTGXLPYNLfZn0vKjL4CAc08gF2s7evINoY9w5L7aFII0AoGJchBVq782SVceaYViQGJf-TGVLLdYnCSRk31NxQC7X0mYQVw51T0ePROij5fiVESsiocJmZtdk">
+<span class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">Alex Chen</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant ml-auto">close</span>
+</div>
+<button class="flex items-center gap-2 mt-2 text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors p-2 w-full justify-center border border-dashed border-outline-variant rounded-lg ghost-border">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                        Add Assignee
+                    </button>
+</div>
+<!-- Properties -->
+<div>
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-3">Properties</h3>
+<div class="space-y-4">
+<div class="flex flex-col gap-1">
+<span class="font-code-sm text-code-sm text-on-surface-variant">Priority</span>
+<div class="flex items-center gap-2 text-error">
+<span class="material-symbols-outlined text-[18px]">keyboard_double_arrow_up</span>
+<span class="font-label-md text-label-md">High</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-code-sm text-code-sm text-on-surface-variant">Status</span>
+<div class="flex items-center gap-2 text-primary">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-md text-label-md">In Progress</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-code-sm text-code-sm text-on-surface-variant">Sprint</span>
+<span class="font-label-md text-label-md text-on-surface">Sprint 42 (Current)</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-code-sm text-code-sm text-on-surface-variant">Estimated</span>
+<span class="font-label-md text-label-md text-on-surface">5 Story Points</span>
+</div>
+</div>
+</div>
+<!-- Labels -->
+<div>
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-3">Labels</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-2.5 py-1 rounded-md bg-[#00422b] text-[#87d2b2] font-code-sm text-code-sm border border-[#005c43]">frontend</span>
+<span class="px-2.5 py-1 rounded-md bg-[#2c322c] text-on-surface font-code-sm text-code-sm border border-outline-variant">webgl</span>
+<span class="px-2.5 py-1 rounded-md bg-[#002116] text-[#8bd6b6] font-code-sm text-code-sm border border-[#003828]">ui/ux</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="mt-auto pt-8 border-t border-outline-variant space-y-3">
+<button class="w-full py-2.5 bg-primary-container text-black font-label-md text-label-md font-bold rounded-lg hover:bg-primary transition-colors flex items-center justify-center gap-2 emerald-glow">
+<span class="material-symbols-outlined text-[18px]">check</span>
+                        Complete Task
+                    </button>
+<button class="w-full py-2.5 border border-primary text-primary font-label-md text-label-md rounded-lg hover:bg-primary/10 transition-colors">
+                        Move to Review
+                    </button>
+</div>
+</aside>
+</div>
+</div>
+
+
+</body></html>

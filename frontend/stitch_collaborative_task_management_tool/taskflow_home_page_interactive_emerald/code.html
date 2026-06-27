@@ -1,0 +1,269 @@
+<!DOCTYPE html><html class="dark" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>TaskFlow - Focus on the deep work.</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700&amp;family=Geist:wght@400;500&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"on-background": "#dee4dc", "outline-variant": "#3c4a42", "secondary-fixed": "#a6f2d1", error: "#ffb4ab", "error-container": "#93000a", surface: "#0f1510", "on-secondary-fixed-variant": "#00513b", "inverse-on-surface": "#2c322c", "primary-container": "#10b981", "on-tertiary-fixed": "#002114", primary: "#4edea3", outline: "#86948a", "on-secondary-container": "#87d2b2", "primary-fixed": "#6ffbbe", "on-surface": "#dee4dc", "surface-variant": "#303630", "on-primary-fixed-variant": "#005236", "secondary-fixed-dim": "#8bd6b6", "on-secondary": "#003828", "on-primary-fixed": "#002113", "on-surface-variant": "#bbcabf", "surface-container-high": "#252c26", "tertiary-fixed": "#68fcbf", "surface-container-lowest": "#0a100b", "inverse-surface": "#dee4dc", "on-tertiary-fixed-variant": "#005137", "surface-container-low": "#171d18", "on-tertiary": "#003825", "surface-container": "#1b211c", "inverse-primary": "#006c49", "secondary-container": "#005c43", secondary: "#8bd6b6", "surface-bright": "#343b35", "surface-tint": "#4edea3", "surface-dim": "#0f1510", "on-tertiary-container": "#00422c", "primary-fixed-dim": "#4edea3", background: "#0f1510", "surface-container-highest": "#303630", "on-primary-container": "#00422b", "on-error-container": "#ffdad6", tertiary: "#45dfa4", "tertiary-container": "#00b982", "on-error": "#690005", "on-secondary-fixed": "#002116", "tertiary-fixed-dim": "#45dfa4", "on-primary": "#003824"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {"margin-desktop": "64px", gutter: "24px", "margin-mobile": "20px", "container-max": "1440px", unit: "4px"}, fontFamily: {"headline-xl": ["Hanken Grotesk"], "headline-lg": ["Hanken Grotesk"], "label-md": ["Geist"], "code-sm": ["Geist"], "headline-lg-mobile": ["Hanken Grotesk"], "body-lg": ["Geist"], "body-md": ["Geist"], headline: ["Hanken Grotesk"], display: ["Hanken Grotesk"], body: ["Geist"], label: ["Geist"]}, fontSize: {"headline-xl": ["48px", {lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700"}], "headline-lg": ["32px", {lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600"}], "label-md": ["14px", {lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500"}], "code-sm": ["13px", {lineHeight: "18px", fontWeight: "400"}], "headline-lg-mobile": ["24px", {lineHeight: "32px", fontWeight: "600"}], "body-lg": ["18px", {lineHeight: "28px", fontWeight: "400"}], "body-md": ["16px", {lineHeight: "24px", fontWeight: "400"}]}}}};</script>
+<style>
+        .hero-glow {
+            background: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.15) 0%, transparent 70%);
+        }
+        .emerald-glow {
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+        }
+        .emerald-glow:hover {
+            box-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
+        }
+        .mockup-container {
+            perspective: 1000px;
+        }
+        .mockup-tilt {
+            transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.5s ease;
+            transform-style: preserve-3d;
+        }
+        .mockup-container:hover .mockup-tilt {
+            transform: rotateX(2deg) rotateY(-2deg) scale(1.02);
+            box-shadow: -10px 20px 40px rgba(0, 0, 0, 0.6), 0 0 40px rgba(16, 185, 129, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container relative">
+<!-- WebGL Background -->
+<canvas class="fixed inset-0 w-full h-full z-[-1] pointer-events-none opacity-40" id="glcanvas"></canvas>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop py-4 bg-transparent backdrop-blur-lg bg-surface/10 border-b border-white/5 shadow-primary/10 transition-all duration-300">
+<div class="flex items-center gap-12">
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface flex items-center gap-2">
+<img alt="TaskFlow" class="h-8 w-8 rounded object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCL6bm2k8BFkK0jnnChmb7Zb4B8qsV7uVsxxq0SB9ouau42Nd0vXt0dSWn4kdDvuQkhmL8EMGCskJw3z-zxU1UpuKCrm-mv-nJ4kjgW06wgo4Rl7dDfm9J-aRNZ9-UpbdDwzfIPocC8ogiIlsi7wiLza0LLy3YsZMOytwK9825V3obGXBP6-5tiMOeBCZD940pXTdlS2e2wEmWdLqivQrPBEy8ew1m3PmVYFOG_xrSJvGFBpnL0TZzJf1vxvxywWjjTUXLUCSOgXZlr">
+                TaskFlow
+            </div>
+<ul class="hidden md:flex gap-8">
+<li class=""><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors hover:scale-105 transition-transform inline-block" href="#">Features</a></li>
+<li class=""><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors hover:scale-105 transition-transform inline-block" href="#">Solutions</a></li>
+<li class=""><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors hover:scale-105 transition-transform inline-block" href="#">Docs</a></li>
+</ul>
+</div>
+<div class="flex items-center gap-4">
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors">Login</button>
+<button class="bg-primary-container text-black font-label-md text-label-md px-6 py-2 rounded-full hover:bg-primary transition-colors emerald-glow font-bold">Get Started</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-32 pb-24 flex flex-col items-center justify-center relative">
+<!-- Hero Background Image -->
+<div class="absolute top-0 left-0 w-full h-[80vh] z-0 overflow-hidden pointer-events-none opacity-30 mix-blend-screen" style="mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%); -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);">
+<img alt="" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLtReNqIEctZrQT5fbOxBSYOmD9SAQuPyoFtCJU0ipCToJHKmMaCI6HMt015TaStBj7OWpQiNB-gus5VtWmLPSLJz3H1KxWLAbAaR16lsYj8HZEjSaSNv_N5F7UTwyaC4hmGGH02KoytVhX4CeWekrJ0kv4epCNYRWXmQJpRq0MO04DQlTnAjHm6DBn2m2drwdHeZ6OXpt9xfdynJBsl4ALMonPGyu04dgdoLcyP3VmyB0VeCLIwWs1T0F2t">
+</div>
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-margin-desktop flex flex-col items-center text-center z-10 relative mt-16">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-surface-container-low/50 backdrop-blur-md mb-8">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-md text-label-md text-primary">TaskFlow 2.0 is now live</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface max-w-4xl mb-6">
+                Focus on the deep work.<br>
+<span class="text-primary/90">We handle the rest.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-10">
+                The high-velocity workspace designed for technical teams. Automate the noise, streamline your processes, and reclaim your deep focus blocks.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center w-full">
+<button class="bg-primary-container text-black font-label-md text-label-md px-8 py-4 rounded-full hover:bg-primary transition-all duration-300 emerald-glow font-bold flex items-center justify-center gap-2">
+                    Start for free
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<p class="font-code-sm text-code-sm text-on-surface-variant/60 mt-4">No credit card required. Free forever for individuals.</p>
+</section>
+<!-- Product Preview Bento -->
+<section class="w-full max-w-container-max mx-auto px-margin-desktop mt-24 relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mockup-container">
+<!-- Main Mockup Card -->
+<div class="md:col-span-8 bg-surface-container-low rounded-xl border border-outline-variant overflow-hidden relative shadow-2xl shadow-black/50 group mockup-tilt">
+<div class="h-8 bg-surface-container border-b border-outline-variant flex items-center px-4 gap-2">
+<div class="flex gap-1.5">
+<div class="w-3 h-3 rounded-full bg-error-container"></div>
+<div class="w-3 h-3 rounded-full bg-outline-variant"></div>
+<div class="w-3 h-3 rounded-full bg-primary-container"></div>
+</div>
+</div>
+<div class="p-6 relative">
+<img class="w-full h-auto rounded-lg object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" data-alt="A high-fidelity, dark-themed UI dashboard mockup showing an intricate project management timeline with glowing emerald progress bars, minimalist technical typography, set against a deep green-black background. High contrast, precise layout, conveying high-velocity performance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEbFLQrXqpcB9zmKS9sp-nWRx1DqV_cuXvWc7hv08lv73JIi5nupeOU9ezPdUy6OPcgOKElUw_yBpmpVUUZ7dN6_T_TJZONvPrf7xln59nOV5DBdih6F4LJLdLYPhT_1bzSydkYcS0F52pX1r2MZ_cVQay5OBWHkseiPOKNMgEd6wbxZJiolWLtL_USP01YRkELV5ckujnc8WZUGmg0URvbyu5Z3FbIzsoW-hoqaDGqaimINcpJmpyf50OFRRfZkk1OLQM5DHGZDWi">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+</div>
+</div>
+<!-- Bento Side Cards -->
+<div class="md:col-span-4 flex flex-col gap-gutter">
+<!-- Feature Card 1 -->
+<div class="bg-surface-container-low rounded-xl border border-outline-variant p-6 flex-1 flex flex-col justify-between hover:border-primary/50 transition-colors group">
+<div>
+<span class="material-symbols-outlined text-primary mb-4 text-3xl group-hover:scale-110 transition-transform">bolt</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-2 text-2xl">Automated Workflows</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Trigger complex data pipelines and issue assignments with zero manual intervention.</p>
+</div>
+</div>
+<!-- Feature Card 2 -->
+<div class="bg-surface-container-low rounded-xl border border-outline-variant p-6 flex-1 flex flex-col justify-between hover:border-primary/50 transition-colors group">
+<div>
+<span class="material-symbols-outlined text-primary mb-4 text-3xl group-hover:scale-110 transition-transform">data_usage</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-2 text-2xl">Real-time Analytics</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Monitor velocity, bottleneck metrics, and team bandwidth in a precise, dark-mode canvas.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Social Proof -->
+<section class="w-full mt-32 text-center relative z-10 px-margin-desktop">
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest mb-8">Trusted by engineering teams at</p>
+<div class="flex flex-wrap justify-center gap-12 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+<!-- Logos would go here, using placeholders for layout -->
+<div class="h-8 w-32 bg-outline-variant/30 rounded"></div>
+<div class="h-8 w-24 bg-outline-variant/30 rounded"></div>
+<div class="h-8 w-40 bg-outline-variant/30 rounded"></div>
+<div class="h-8 w-28 bg-outline-variant/30 rounded"></div>
+<div class="h-8 w-36 bg-outline-variant/30 rounded"></div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-margin-desktop flex flex-col md:flex-row justify-between items-center bg-surface-container-lowest border-t border-outline-variant z-10 relative">
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface flex items-center gap-2 mb-6 md:mb-0">
+<img alt="TaskFlow" class="h-6 w-6 rounded object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCL6bm2k8BFkK0jnnChmb7Zb4B8qsV7uVsxxq0SB9ouau42Nd0vXt0dSWn4kdDvuQkhmL8EMGCskJw3z-zxU1UpuKCrm-mv-nJ4kjgW06wgo4Rl7dDfm9J-aRNZ9-UpbdDwzfIPocC8ogiIlsi7wiLza0LLy3YsZMOytwK9825V3obGXBP6-5tiMOeBCZD940pXTdlS2e2wEmWdLqivQrPBEy8ew1m3PmVYFOG_xrSJvGFBpnL0TZzJf1vxvxywWjjTUXLUCSOgXZlr">
+             TaskFlow
+        </div>
+<ul class="flex flex-wrap justify-center gap-8 mb-6 md:mb-0">
+<li class=""><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface underline transition-opacity duration-200" href="#">Privacy</a></li>
+<li class=""><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface underline transition-opacity duration-200" href="#">Terms</a></li>
+<li class=""><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface underline transition-opacity duration-200" href="#">Security</a></li>
+<li class=""><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface underline transition-opacity duration-200" href="#">Contact</a></li>
+</ul>
+<div class="font-body-md text-body-md text-on-surface-variant">
+            © 2024 TaskFlow AI. All rights reserved.
+        </div>
+</footer>
+<script>
+    // Simple WebGL Emerald Mist Shader
+    const canvas = document.getElementById('glcanvas');
+    const gl = canvas.getContext('webgl');
+    
+    if (gl) {
+        const vsSource = `
+            attribute vec4 aVertexPosition;
+            void main() {
+                gl_Position = aVertexPosition;
+            }
+        `;
+        
+        const fsSource = `
+            precision highp float;
+            uniform vec2 u_resolution;
+            uniform vec2 u_mouse;
+            uniform float u_time;
+            
+            // Simplex noise function placeholder (simplified for brevity)
+            float random (in vec2 st) {
+                return fract(sin(dot(st.xy, vec2(12.9898,78.233))) * 43758.5453123);
+            }
+            
+            float noise (in vec2 st) {
+                vec2 i = floor(st);
+                vec2 f = fract(st);
+                float a = random(i);
+                float b = random(i + vec2(1.0, 0.0));
+                float c = random(i + vec2(0.0, 1.0));
+                float d = random(i + vec2(1.0, 1.0));
+                vec2 u = f * f * (3.0 - 2.0 * f);
+                return mix(a, b, u.x) + (c - a)* u.y * (1.0 - u.x) + (d - b) * u.x * u.y;
+            }
+
+            void main() {
+                vec2 st = gl_FragCoord.xy / u_resolution.xy;
+                vec2 mouse = u_mouse / u_resolution;
+                mouse.y = 1.0 - mouse.y; // flip y
+                
+                // Dist to mouse
+                float dist = distance(st, mouse);
+                float glow = smoothstep(0.8, 0.0, dist);
+                
+                // Noise movement
+                vec2 pos = vec2(st * 3.0);
+                float n = noise(pos + u_time * 0.1);
+                
+                vec3 bg = vec3(0.05, 0.08, 0.06); // background
+                vec3 emerald = vec3(0.06, 0.72, 0.5); // primary-container
+                
+                vec3 color = mix(bg, emerald, glow * n * 0.5);
+                
+                gl_FragColor = vec4(color, 1.0);
+            }
+        `;
+        
+        function compileShader(gl, type, source) {
+            const shader = gl.createShader(type);
+            gl.shaderSource(shader, source);
+            gl.compileShader(shader);
+            return shader;
+        }
+        
+        const vertexShader = compileShader(gl, gl.VERTEX_SHADER, vsSource);
+        const fragmentShader = compileShader(gl, gl.FRAGMENT_SHADER, fsSource);
+        
+        const program = gl.createProgram();
+        gl.attachShader(program, vertexShader);
+        gl.attachShader(program, fragmentShader);
+        gl.linkProgram(program);
+        gl.useProgram(program);
+        
+        const positions = new Float32Array([
+            -1.0,  1.0,
+             1.0,  1.0,
+            -1.0, -1.0,
+             1.0, -1.0,
+        ]);
+        
+        const positionBuffer = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+        gl.bufferData(gl.ARRAY_BUFFER, positions, gl.STATIC_DRAW);
+        
+        const positionAttributeLocation = gl.getAttribLocation(program, "aVertexPosition");
+        gl.enableVertexAttribArray(positionAttributeLocation);
+        gl.vertexAttribPointer(positionAttributeLocation, 2, gl.FLOAT, false, 0, 0);
+        
+        const resolutionUniformLocation = gl.getUniformLocation(program, "u_resolution");
+        const mouseUniformLocation = gl.getUniformLocation(program, "u_mouse");
+        const timeUniformLocation = gl.getUniformLocation(program, "u_time");
+        
+        let mouseX = window.innerWidth / 2;
+        let mouseY = window.innerHeight / 2;
+        
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+        
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            gl.viewport(0, 0, canvas.width, canvas.height);
+        }
+        
+        window.addEventListener('resize', resize);
+        resize();
+        
+        let startTime = performance.now();
+        
+        function render(time) {
+            gl.uniform2f(resolutionUniformLocation, canvas.width, canvas.height);
+            gl.uniform2f(mouseUniformLocation, mouseX, mouseY);
+            gl.uniform1f(timeUniformLocation, (time - startTime) * 0.001);
+            
+            gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+            requestAnimationFrame(render);
+        }
+        requestAnimationFrame(render);
+    }
+</script>
+</body></html>
