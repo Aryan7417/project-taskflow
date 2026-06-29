@@ -5,7 +5,7 @@ import {isAuthenticate} from '../middleware/auth.middlewere.js'
 
 const routes = express.Router();
 
-routes.post("/signup",registerUser)
+routes.post("/register",registerUser)
 routes.post("/login",loginUser)
 routes.post("/logout",logoutUser)
 // routes.get("/me",isAuthenticate,(res,req)=>{
