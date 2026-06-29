@@ -198,7 +198,7 @@ const Dashboard = () => {
 
               {filteredProjects.length === 0 ? (
                 <div className="bg-surface-container-low border border-outline-variant rounded-xl p-12 text-center">
-                  <span className="material-symbols-outlined text-4xl text-on-surface-variant/40 mb-3">folder_open</span>
+                  <span className="material-symbols-outlined text-4xl text-on-surface-variant/40 mb-3"></span>
                   <p className="text-on-surface-variant font-body-md">No active projects matching criteria.</p>
                 </div>
               ) : (
