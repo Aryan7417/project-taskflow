@@ -48,7 +48,7 @@ export const AuthProvider = ({ children }) => {
     try {
       setError(null);
       // Backend signup endpoint is /auth/signup
-      const response = await api.post('/auth/signup', { name, email, password });
+      const response = await api.post('/auth/register', { name, email, password });
       if (response.data && response.data.success) {
         // Backend /auth/signup does not auto-login and return token/cookie directly, 
         // it just returns user register success. So we can prompt user to login or login them automatically.
